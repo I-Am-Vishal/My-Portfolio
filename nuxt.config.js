@@ -18,7 +18,14 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Arvo&family=Play&display=swap'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -27,7 +34,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~styles/global.css'],
+  css: ['~/styles/global.css'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -65,21 +72,25 @@ export default {
    */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    treeShake: true,
     theme: {
-      dark: false,
+      light: true,
       themes: {
         light: {
           primary: colors.lightBlue,
           secondary: colors.grey.darken1,
           accent: colors.pink.darken1,
           error: colors.red.accent3,
-          background: colors.indigo.lighten5,
-          info: colors.teal.darken1
+          background: colors.shades.white,
+          info: colors.teal.darken1,
+          lime: colors.lime.accent3
         },
         dark: {
           primary: colors.blue.darken4,
-          background: colors.indigo.base,
-          info: colors.teal.lighten1
+          background: colors.shades.black,
+          black: colors.shades.black,
+          info: colors.teal.lighten1,
+          lime: colors.lime.accent3
         }
       }
     }

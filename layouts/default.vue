@@ -1,8 +1,13 @@
 <template>
-  <v-app dark>
-    <v-main>
+  <v-app>
+    <v-main style="background-color:rgb(8, 8, 8)">
       <v-container fluid>
-        <Nuxt />
+        <v-card
+          class="pa-sm-5 pa-2 ma-sm-10 ma-2 rounded-xl add-shadow"
+          style="background-color:black;"
+        >
+          <Nuxt />
+        </v-card>
       </v-container>
     </v-main>
   </v-app>

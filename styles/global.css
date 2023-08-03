@@ -1,0 +1,26 @@
+.app-bar-navigation-text{
+    color: #eee !important;
+    font-size: 25px;
+    font-weight:500;
+    text-shadow: -1px -1px 12px 18px rgba(184, 34, 42, 0.281) !important;
+    text-decoration: none;
+}
+.no-uppercase {
+    text-transform: unset !important;
+}
+.grow-img{
+    transition: 1s ease;
+}
+.add-shadow {
+    box-shadow:-1px -1px 12px 18px rgba(184, 34, 42, 0.281) !important;
+}
+.grow-img:hover{
+-webkit-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1);
+transition: 1s ease;
+}
+.red-color-accent {
+ color:rgb(88, 12, 15);
+}
+
