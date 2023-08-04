@@ -15,17 +15,15 @@
     color: #eee !important;
     font-size: 25px;
     font-weight:500;
-    text-shadow: -1px -1px 12px 18px rgba(184, 34, 42, 0.281) !important;
     text-decoration: none;
     transition: 1s ease;
 }
 .app-bar-navigation-text:hover{
     color: white !important;
-    font-size: 28px;
+    font-size: 25px;
     font-weight:500;
-    text-shadow: -1px -1px 12px 18px rgba(184, 34, 42, 0.281) !important;
+    box-shadow:-1px -1px 12px 18px rgba(184, 34, 42, 0.281) !important;
     text-decoration: none;
-    background-color: red;
     transform: scale(1.3);
     transition: 0.5s ease;
 }
