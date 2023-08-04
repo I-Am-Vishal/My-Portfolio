@@ -72,16 +72,16 @@
                   <span style="line-height:35px"
                     >Hey , my name is
                     <span class="red--text">Vishal Raj Sinha</span>
-                    and i am a mechanical engineer graduate <br />
+                    and i am a Mechanical engineering graduate <br />
                     currently working as a full stack developer.I natively
                     belong from Ambikapur <br />
                     a city situated in Chhattisgarh state. I have completed my
-                    Gradutaion from <br />
+                    Graduation from <br />
                     <span class="red--text">Dr. CV Raman University</span>
                     Kota Bilaspur C.G. I pursue 4 years of experience <br />
                     in
                     <span class="red--text">Web Application</span>
-                    developement.
+                    development.
                   </span>
                 </v-col>
 
