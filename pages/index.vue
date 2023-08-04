@@ -5,15 +5,16 @@
         <Appbar />
       </v-col>
     </v-row>
+
     <v-row
-      class="mx-3"
+      class="mx-3 mb-sm-10"
       :style="$vuetify.breakpoint.mdAndDown ? '' : 'height:800px'"
     >
       <v-col
         v-if="$vuetify.breakpoint.mdAndDown"
         cols="12"
         sm="6"
-        class="custom-background grow-img mb-2"
+        class="my-photo-background grow-img mb-2"
         style="height:400px"
       >
       </v-col>
@@ -21,26 +22,90 @@
         cols="12"
         sm="6"
         class="d-flex justify-center align-center white--text px-3"
-        :class="$vuetify.breakpoint.mobile ? '' : 'svg-background'"
+        :class="$vuetify.breakpoint.mobile ? '' : 'svg-shaped-background'"
       >
         <span class="grow-img">
-          <span class="text-sm-h3 text-h5">Hi i am </span> <br />
-          <span class="text-sm-h1 text-h3 font-weight-bold"
-            >Vishal Raj Sinha</span
-          >
+          <span class="text-sm-h4 text-h5">
+            Hi, I'm
+          </span>
           <br />
-          <span class="text-sm-h4 text-h5"> and i work as </span> <br />
-          <span class="text-sm-h2 text-h3 red--text font-weight-bold"
-            >Full Stack Developer</span
-          >
+
+          <span class="text-lg-h1 text-h3 font-weight-bold red--text"
+            >Vishal Raj Sinha</span
+          ><br />
+          <span class="text-sm-h4 text-h5">Full stack developer </span>
         </span>
       </v-col>
       <v-col
         v-if="!$vuetify.breakpoint.mdAndDown"
         cols="12"
         sm="6"
-        class="custom-background grow-img"
+        class="my-photo-background grow-img"
       >
+      </v-col>
+    </v-row>
+
+    <v-row class="my-sm-10 mx-md-15">
+      <v-col cols="12">
+        <v-card
+          class="rounded-xl px-sm-10 px-5 py-10 mx-sm-15 my-sm-12"
+          dark
+          style="background-color: black;"
+        >
+          <v-row>
+            <v-col cols="12" lg="4" class="ma-0 pa-0 rounded-xl">
+              <v-img
+                :src="require('~/assets/my_portrait.png')"
+                class="mx-auto ma-0 pa-0 grow-img"
+                style="cursor: pointer;"
+                max-height="400px"
+                contain
+              ></v-img>
+            </v-col>
+
+            <v-col cols="12" lg="8">
+              <v-row class="mx-auto">
+                <v-col cols="12" class="text-left mt-2"
+                  ><p class="text-h4">ABOUT ME</p></v-col
+                >
+                <v-col cols="12" class="text-left">
+                  <span style="line-height:35px"
+                    >Hey , my name is
+                    <span class="red--text">Vishal Raj Sinha</span>
+                    and i am a mechanical engineer graduate <br />
+                    currently working as a full stack developer.I natively
+                    belong from Ambikapur <br />
+                    a city situated in Chhattisgarh state. I have completed my
+                    Gradutaion from <br />
+                    <span class="red--text">Dr. CV Raman University</span>
+                    Kota Bilaspur C.G. I pursue 4 years of experience <br />
+                    in
+                    <span class="red--text">Web Application</span>
+                    developement.
+                  </span>
+                </v-col>
+
+                <v-col cols="12" class="text-left text-h5">
+                  SKILLS
+                </v-col>
+
+                <v-col cols="12" class="text-left">
+                  <v-chip
+                    v-for="skill in skills"
+                    :key="skill"
+                    class="ma-4 grow-img"
+                    style="cursor: pointer;"
+                    color="red"
+                    text-color="white"
+                    outlined
+                  >
+                    {{ skill }}
+                  </v-chip>
+                </v-col>
+              </v-row>
+            </v-col>
+          </v-row>
+        </v-card>
       </v-col>
     </v-row>
   </div>
@@ -49,22 +114,9 @@
 <script>
 export default {
   data() {
-    return {}
+    return {
+      skills: ['Vue.js', 'Nuxt.js', 'Django', 'SQL', 'Vuetify', 'Bootstrap']
+    }
   }
 }
 </script>
-
-<style>
-.custom-background {
-  background-image: url('~/assets/my_portrait.png'), url('~/assets/svg1.svg') !important;
-  background-size: contain !important;
-  background-position: center !important;
-}
-
-.svg-background {
-  background-image: url('~/assets/svg1.svg'), url('~/assets/svg2.svg') !important;
-  background-position: right bottom, left top !important;
-  background-size: 500px 400px;
-  animation: slide 3s linear infinite !important;
-}
-</style>

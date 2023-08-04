@@ -7,9 +7,19 @@
     >
       <v-row>
         <v-col cols="12" sm="8" class="text-center">
-          <a href="#" class="app-bar-navigation-text mr-sm-10 mr-2">Home</a>
-          <a href="#" class="app-bar-navigation-text mr-sm-10 mr-2">Blog</a>
-          <a href="#" class="app-bar-navigation-text">About</a>
+          <a
+            href="#"
+            class="app-bar-navigation-text mr-sm-10 mr-2 pa-sm-3 rounded-pill"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="app-bar-navigation-text mr-sm-10 mr-2 pa-sm-3 rounded-pill"
+            >Blog</a
+          >
+          <a href="#" class="app-bar-navigation-text pa-sm-3 rounded-pill"
+            >About</a
+          >
         </v-col>
         <v-col cols="12" sm="4" class="text-center">
           <v-btn
