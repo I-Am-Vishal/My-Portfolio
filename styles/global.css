@@ -35,11 +35,24 @@
    transition: 1s ease;
 }
 
-  .my-photo-background {
-    background-image: url('~/assets/portfolio-dp1.png'), url('~/assets/svg1.svg') !important;
+  .pointing-left-background {
+    background-image: url('~/assets/pointing-left.png'), url('~/assets/svg1.svg') !important;
     background-size: contain !important;
     background-position: center !important;
     cursor: pointer;
+}
+  .pointing-left-background:hover {
+  background-position: left top, right top !important;
+}
+
+  .pointing-right-background {
+  background-image: url('~/assets/pointing-right.png'), url('~/assets/svg1.svg') !important;
+  background-size: contain !important;
+  background-position: center !important;
+  cursor: pointer;
+}
+  .pointing-right-background:hover {
+  background-position: right, left top !important;
 }
 
   .svg-shaped-background {
@@ -58,8 +71,5 @@
     transition: 2s ease;
 }
 
-.frosted-effect {
-    background-color: rgb(10, 10, 10) !important;  
-    backdrop-filter: blur(10px) !important;
-}
+ 
 

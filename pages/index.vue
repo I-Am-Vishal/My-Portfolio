@@ -14,7 +14,7 @@
         v-if="$vuetify.breakpoint.mdAndDown"
         cols="12"
         sm="6"
-        class="my-photo-background grow-img mb-2"
+        class="pointing-right-background grow-img mb-2"
         style="height:400px"
       >
       </v-col>
@@ -40,7 +40,7 @@
         v-if="!$vuetify.breakpoint.mdAndDown"
         cols="12"
         sm="6"
-        class="my-photo-background grow-img"
+        class="pointing-left-background  grow-img"
       >
       </v-col>
     </v-row>
@@ -55,7 +55,11 @@
           <v-row>
             <v-col cols="12" lg="4" class="ma-0 pa-0 rounded-xl">
               <v-img
-                :src="require('~/assets/my_portrait.png')"
+                :src="
+                  require($vuetify.breakpoint.mdAndDown
+                    ? '~/assets/my_portrait.png'
+                    : '~/assets/pointing-right.png')
+                "
                 class="mx-auto ma-0 pa-0 grow-img"
                 style="cursor: pointer;"
                 max-height="400px"
