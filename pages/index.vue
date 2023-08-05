@@ -112,6 +112,26 @@
         </v-card>
       </v-col>
     </v-row>
+
+    <v-row class="my-sm-10 mx-md-15">
+      <v-col class="text-center">
+        <span class="text-h3 font-weight-normal white--text"
+          >Wana check out my details in traditional way ?
+        </span>
+      </v-col>
+    </v-row>
+
+    <v-row class="my-sm-15 mx-md-15">
+      <v-col class="text-center">
+        <v-img
+          :src="require('~/assets/vishal-resume.png')"
+          class="mx-auto grow-img add-shadow"
+          style="cursor: pointer;"
+          max-height="900px"
+          max-width="600px"
+        ></v-img>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -119,7 +139,16 @@
 export default {
   data() {
     return {
-      skills: ['Vue.js', 'Nuxt.js', 'Django', 'SQL', 'Vuetify', 'Bootstrap']
+      skills: [
+        'Html',
+        'Vanilla Css',
+        'Vue.js',
+        'Nuxt.js',
+        'Django',
+        'SQL',
+        'Vuetify',
+        'Bootstrap'
+      ]
     }
   }
 }
