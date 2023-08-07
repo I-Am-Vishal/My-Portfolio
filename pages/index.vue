@@ -95,15 +95,18 @@
 
                 <v-col cols="12" class="text-left">
                   <v-chip
-                    v-for="skill in skills"
-                    :key="skill"
-                    class="ma-4 grow-img"
+                    v-for="(skill, index) in skillset"
+                    :key="index"
+                    class="ma-4 pa-sm-4 grow-img"
                     style="cursor: pointer;"
                     color="red"
                     text-color="white"
                     outlined
                   >
-                    {{ skill }}
+                    <span>
+                      <v-icon class="mr-3">{{ skill.icon }}</v-icon>
+                      {{ skill.text }}</span
+                    >
                   </v-chip>
                 </v-col>
               </v-row>
@@ -121,16 +124,44 @@
       </v-col>
     </v-row>
 
-    <v-row class="my-sm-15 mx-md-15">
+    <v-row class="my-sm-15 mx-md-15 mx-2">
       <v-col class="text-center">
-        <v-img
-          :src="require('~/assets/vishal-resume.png')"
-          class="mx-auto grow-img add-shadow"
-          style="cursor: pointer;"
-          max-height="900px"
-          max-width="600px"
-        ></v-img>
+        <v-hover>
+          <template v-slot:default="{ hover }">
+            <v-img
+              :src="require('~/assets/vishal-resume.png')"
+              class="mx-auto grow-img add-shadow"
+              style="cursor: pointer;"
+              max-height="900px"
+              max-width="600px"
+            >
+              <v-fade-transition>
+                <v-overlay v-if="hover" absolute color="#036358">
+                  <v-btn
+                    ><a
+                      href="/resume.pdf"
+                      class="text-decoration-none white--text"
+                      >Download</a
+                    >
+                  </v-btn>
+                </v-overlay>
+              </v-fade-transition>
+            </v-img>
+          </template>
+        </v-hover>
       </v-col>
+    </v-row>
+
+    <v-row class="my-sm-10 mx-md-15">
+      <v-col class="text-center">
+        <span class="text-h3 font-weight-normal white--text"
+          >Technologies i have worked on ?
+        </span>
+      </v-col>
+    </v-row>
+
+    <v-row class="my-sm-10 mx-md-2">
+      <v-col class="text-center"> </v-col>
     </v-row>
   </div>
 </template>
@@ -139,15 +170,47 @@
 export default {
   data() {
     return {
-      skills: [
-        'Html',
-        'Vanilla Css',
-        'Vue.js',
-        'Nuxt.js',
-        'Django',
-        'SQL',
-        'Vuetify',
-        'Bootstrap'
+      skillset: [
+        {
+          text: 'HTML',
+          icon: 'mdi-language-html5'
+        },
+        {
+          text: 'CSS',
+          icon: 'mdi-language-css3'
+        },
+        {
+          text: 'JAVASCRIPT',
+          icon: 'mdi-language-javascript'
+        },
+        {
+          text: 'PYTHON',
+          icon: 'mdi-language-python'
+        },
+        {
+          text: 'VUE.JS',
+          icon: 'mdi-vuejs'
+        },
+        {
+          text: 'NUXT.JS',
+          icon: 'mdi-nuxt'
+        },
+        {
+          text: 'DJANGO',
+          icon: 'mdi-language-python'
+        },
+        {
+          text: 'SQL',
+          icon: 'mdi-database-search'
+        },
+        {
+          text: 'VUETIFY',
+          icon: 'mdi-vuetify'
+        },
+        {
+          text: 'BOOTSTRAP',
+          icon: 'mdi-bootstrap'
+        }
       ]
     }
   }
