@@ -1,0 +1,246 @@
+/* ============================================
+   VISHAL RAJ SINHA — DARK MATERIAL PORTFOLIO
+   Design tokens & animations
+   ============================================ */
+
+:root {
+  /* Dark base */
+  --bg-deep: #0a0a0f;
+  --bg-surface: #12121a;
+  --bg-elevated: #1a1a26;
+  --bg-card: rgba(26, 26, 40, 0.7);
+  --bg-glass: rgba(255, 255, 255, 0.03);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-accent: rgba(0, 212, 170, 0.5);
+  
+  /* Primary accent — Teal */
+  --accent: #00d4aa;
+  --accent-dim: #00b894;
+  --accent-glow: rgba(0, 212, 170, 0.35);
+  --accent-text: #00d4aa;
+  
+  /* Colorful palette */
+  --color-blue: #3b82f6;
+  --color-violet: #8b5cf6;
+  --color-pink: #ec4899;
+  --color-amber: #f59e0b;
+  --color-emerald: #10b981;
+  --color-cyan: #06b6d4;
+  --color-rose: #f43f5e;
+  --color-indigo: #6366f1;
+  
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #b8b8c8;
+  --text-muted: #7878a0;
+  
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 0.25s;
+  --duration-normal: 0.4s;
+  --duration-slow: 0.7s;
+}
+
+/* ============================================
+   LIGHT THEME
+   ============================================ */
+[data-theme="light"] {
+  --bg-deep: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-elevated: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-glass: rgba(0, 0, 0, 0.03);
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-accent: rgba(0, 180, 140, 0.5);
+  
+  --accent: #0891b2;
+  --accent-dim: #0e7490;
+  --accent-glow: rgba(8, 145, 178, 0.25);
+  --accent-text: #0891b2;
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+}
+
+[data-theme="light"] .glass-card:hover {
+  box-shadow: 0 0 30px var(--accent-glow), 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .hover-lift:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Light theme body — softer gradients */
+html[data-theme="light"] body {
+  background: var(--bg-deep);
+  background-image: radial-gradient(ellipse 80% 50% at 20% 20%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(0, 212, 170, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 30% at 50% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-accent);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: var(--bg-deep);
+}
+
+/* ============================================
+   REVEAL ANIMATIONS
+   ============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px var(--accent-glow); }
+  50% { box-shadow: 0 0 40px var(--accent-glow); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+  to { width: var(--progress-width, 0%); }
+}
+
+/* Utility classes */
+.animate-fade-in-up {
+  animation: fadeInUp var(--duration-slow) var(--ease-out-expo) both;
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--duration-normal) var(--ease-out-expo) both;
+}
+
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
+.animate-delay-4 { animation-delay: 0.4s; }
+.animate-delay-5 { animation-delay: 0.5s; }
+
+/* Hover lift */
+.hover-lift {
+  transition: transform var(--duration-fast) var(--ease-out-expo),
+    box-shadow var(--duration-fast) var(--ease-out-expo);
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Glass card — colorful hover */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all var(--duration-normal) var(--ease-out-expo);
+}
+.glass-card:hover {
+  border-color: var(--border-accent);
+  box-shadow: 0 0 30px var(--accent-glow), 0 0 60px rgba(156, 39, 176, 0.1);
+}
+
+/* Section anchor scroll offset for sticky nav */
+#about, #experience, #skills, #education, #contact, #resume {
+  scroll-margin-top: 80px;
+}
+
+/* Nav links */
+.nav-link {
+  color: var(--text-secondary) !important;
+  text-decoration: none !important;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all var(--duration-fast) var(--ease-out-expo);
+}
+.nav-link:hover {
+  color: var(--accent) !important;
+  background: var(--bg-glass);
+}
+
+/* Section anchors — account for sticky nav */
+#about,
+#experience,
+#skills,
+#education,
+#contact,
+#resume,
+#hero {
+  scroll-margin-top: 80px;
+}
+
+/* Progress bars for skills — colorful per category */
+.skill-progress-bar {
+  height: 10px;
+  background: var(--bg-elevated);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.skill-progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  animation: progressFill 1.2s var(--ease-out-expo) forwards;
+}
+
+.skill-progress-fill.lang { background: linear-gradient(90deg, #ff9800, #ffc107); box-shadow: 0 0 12px rgba(255, 152, 0, 0.5); }
+.skill-progress-fill.frontend { background: linear-gradient(90deg, #00d4aa, #00e5c4); box-shadow: 0 0 12px rgba(0, 212, 170, 0.5); }
+.skill-progress-fill.backend { background: linear-gradient(90deg, #9c27b0, #ba68c8); box-shadow: 0 0 12px rgba(156, 39, 176, 0.5); }

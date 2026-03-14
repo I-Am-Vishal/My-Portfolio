@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-deep);
+  background-image: radial-gradient(ellipse 80% 50% at 20% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(0, 212, 170, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 30% at 50% 50%, rgba(59, 130, 246, 0.04) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100vh;
+}
