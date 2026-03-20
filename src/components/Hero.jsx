@@ -40,7 +40,7 @@ function Hero() {
       >
         <Box
           component="img"
-          src="/assets/vishal-portrait.png"
+          src={`${import.meta.env.BASE_URL}assets/vishal-portrait.png`}
           alt="Vishal Raj Sinha"
           className="animate-fade-in-up hover-lift"
           sx={{
